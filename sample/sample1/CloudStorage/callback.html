@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja" class="h-100">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>気分屋aibo</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+ 
+  <style>
+    main > .container {
+      padding: 60px 15px 0;
+    }
+    section {
+      padding: 150px 0;
+    }
+  </style>
+</head>
+
+<body id="page-top" class="d-flex flex-column h-100">
+  <header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">気分屋aibo</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-shrink-0">
+    <div class="container">
+      <section id="services">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-lg-8 mx-auto">
+              <div id="status_progress">
+                <div class="d-flex justify-content-center text-primary m-5">
+                  <div class="spinner-border" role="status" style="width: 80px; height: 80px;"></div>
+                </div>
+                <p class="lead">連携アプリとアカウントを連携中です…</p>
+              </div>
+              <div id="status_success" class="d-none">
+                <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Success" width="128" height="128" fill="currentColor" class="bi bi-exclamation-triangle-fill text-success m-5" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                </svg>
+                <p class="lead">連携が完了しました！</p>
+                <div class="d-grid gap-2 col-6 mx-auto m-3">
+                <a href="./index.html" class="btn btn-secondary" role="button" aria-disabled="true">連携アプリのトップページに戻る</a>
+                </div>
+              </div>
+              <div id="status_failed" class="d-none">
+                <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Warning" width="128" height="128" fill="currentColor" class="bi bi-exclamation-triangle-fill text-secondary m-5" viewBox="0 0 16 16">
+                  <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>
+                <p class="lead">連携に失敗しました</p>
+                <div id="msg_error">連携できるアプリ数の上限に達しています。<br />
+                  現在連携している連携アプリは aibo デベロッパーサイト でご確認ください。
+                </div>
+                <button id="link_devsite" type="button" class="btn btn-link d-none">利用中の連携アプリを確認する</button>
+                <div class="d-grid gap-2 col-12 mx-auto m-3">
+                  <a href="./index.html" class="btn btn-secondary" role="button" aria-disabled="true">連携アプリのトップページに戻る</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer mt-auto py-3 bg-dark">
+    <div class="container">
+      <span class="float-right text-white">Copyright 2022</span>
+    </div>
+  </footer>
+
+  <script>
+    // クエリ文字列を取得
+    const url = window.location.search;
+    const hash = url.slice(1).split('&');
+    var code = "";
+    var state = "";
+
+    hash.forEach(value => {
+      const key = value.split('=')[0];
+      const val = value.split('=')[1];
+      if (key === 'code') { code = val; }
+      if (key === 'state') { state = val; }
+    });
+    console.log(`code: ${code}`);
+    console.log(`state: ${state}`);
+
+    // サーバに送る
+    const postData = { code, state};
+    const body = JSON.stringify(postData);
+    const headers = {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    };
+
+    // 情報を修正
+    const auth_endpoint = ""; // 認可・認証用のエンドポイント（Cloud FunctionsのトリガーURL）を入力
+
+    // stateの検証
+    const progressInfo = $("#status_progress");
+    const successInfo = $("#status_success");
+    const failedInfo = $("#status_failed");
+    const linkDevsite = $("#link_devsite");
+
+    if (state != "" && state == sessionStorage.getItem('state')){
+      fetch(
+        auth_endpoint,
+        { method: 'POST', mode:"cors", headers, body }
+      )
+      .then((res) => {
+        progressInfo.addClass("d-none");
+        console.log(res)
+        if(res.ok){
+          successInfo.removeClass("d-none");
+        }else{
+          $("#msg_error").text('認証エラー！');
+          linkDevsite.removeClass("d-none");
+          failedInfo.removeClass("d-none");
+        }
+        console.log("done")
+      })
+      .catch((err_fetch) => {
+        console.log("error")
+        console.log(err_fetch)
+        $("#msg_error").text("通信エラー！！");
+        progressInfo.addClass("d-none");
+        failedInfo.removeClass("d-none");
+      });
+    } else{
+      $("#msg_error").text('セッション情報が不正です。ブラウザを再起動して再度連携してください。');
+      progressInfo.addClass("d-none");
+      failedInfo.removeClass("d-none");
+    }
+  </script>
+</body>
+
+</html>

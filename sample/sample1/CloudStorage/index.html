@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja" class="h-100" scroll-behavior="smooth">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>気分屋aibo</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <style>
+    #head {
+      padding: 120px 15px 60px;
+    }
+
+    #contact {
+      margin-bottom: 4rem;
+    }
+
+    .featurette-divider {
+      margin: 5rem 0;
+    }
+
+    .btn1 {
+      background: #EA5C6F;
+      color: white;
+      padding: 16px 40px;
+      text-decoration: none;
+      border-radius: 30px;
+      transition-property: opacity;
+      transition-duration: .5s;
+      -webkit-transition-duration: .5s;
+    }
+
+    .btn1:hover {
+      opacity: .7;
+    }
+  </style>
+</head>
+
+<body id="page-top" class="d-flex flex-column h-100">
+  <header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-md fixed-top p-1" style="background-color:#FCF7F8;">
+      <div class="container-fluid">
+        <a class="navbar-brand font-weight-bold" href="#about" style="color: #707070">気分屋aibo</a>
+        <a class="nav-item nav-link active btn btn-sm btn-outline my-2 my-sm-0"
+          href="https://developer.aibo.com/jp/linkableapp/list">連携アプリ一覧</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-shrink-0">
+
+    <section id="top" style="background: #FFB627;">
+      <div style="padding-left:12px;padding-top:30px;">
+        <div class="container-fluid d-none d-md-block">
+          <div class="row">
+            <div class="col-12">
+              <div class="text-center">
+                <a href="#about"><img style="top: 0px;" src="image/topImage.png" class="img-fluid"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid d-md-none no-padding">
+        <div class="row">
+          <div class="col-12">
+            <a href="#about">
+              <img class='img-fluid w-100' src="image/topImageSmall.png" style="padding-top:30px" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container-fluid">
+        <hr class="featurette-divider">
+        <div class="row">
+          <div class="col mx-auto">
+            <h2 class="text-center">- 気分屋aiboの遊びかた -</h2>
+            <br class="d-inline" />
+            <p class="text-center">気分屋aiboと連携したら、aiboに「おはよう」と声をかけてみましょう。</p>
+            <p class="text-center">aiboの気分に応じて、３つのうちの1つのふるまいを見せてくれます。</p>
+          </div>
+        </div>
+        <br class="d-inline" />
+        <div class="row">
+          <div class="col-sm mx-auto">
+            <p class="text-center font-weight-bold">とっても喜ぶ</p>
+              <img src="image/happy.png" class="img-fluid">
+          </div>
+          <div class="col-sm mx-auto">
+            <p class="text-center font-weight-bold">ブルッと震える</p>
+              <img src="image/shiver.png" class="img-fluid">
+          </div>
+          <div class="col-sm mx-auto">
+            <p class="text-center font-weight-bold">顔を洗う仕草をする</p>
+              <img src="image/wash.png" class="img-fluid">
+          </div>
+        </div>
+        <br class="d-inline" />
+        <div class="row">
+          <div class="col mx-auto">
+            <p class="text-center">抱き上げられている場合はふるまいができません。</p>
+            <p class="text-center">aiboが自由に動いているときに、声をかけてあげましょう。</p>
+          </div>
+        </div>
+    </section>
+
+    <hr class="featurette-divider">
+
+    <section id="link">
+      <div class="row">
+        <div class="col mx-auto">
+          <h2 class="text-center">- 気分屋aiboと連携する -</h2>
+          <p class="text-center">連携アプリとつながるためには、アカウント連携が必要です。My aibo のアカウントで認証してください。</p>
+
+          <div style="text-align: center; padding-top:30px;">
+            <a href="#" class="btn1" id="authlink" role="button">aiboと連携する</a>
+          </div>
+        </div>
+    </section>
+
+    <hr class="featurette-divider">
+
+    <section id="contact">
+      <div class="row">
+        <div class="col mx-auto">
+          <h2 class="text-center">- お問い合わせ -</h2>
+          <p class="text-center">お問合せ先を記載</p>
+        </div>
+      </div>
+    </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer mt-auto py-3 bg-dark">
+    <div class="container">
+      <span class="float-right text-white">Copyright 2022 </span>
+    </div>
+  </footer>
+
+  <script>
+    // stateの発行
+    const randomValueArray = crypto.getRandomValues(new Uint32Array(8));
+    const randomValue = randomValueArray.join('-');
+    sessionStorage.setItem('state', randomValue);
+    console.log(`state: ${sessionStorage.getItem('state')}`);
+
+    // 情報を書き換える
+    const client_id = 'クライアントIDを入力';
+    const redirect_uri = 'リダイレクトURL（callback.htmlの公開URL）を入力';
+    const region = 'JP'; // aibo を購入した地域を選択して下さい JP or US
+
+    // stateを認証URLに反映
+    const myaibo_url = region === 'JP' ? 'https://myaibo.aibo.sony.jp' : 'https://myaibo.aibo.com/us';
+    const target = document.getElementById("authlink");
+    target.href = myaibo_url + "/account_link.html?state=" + sessionStorage.getItem('state')
+      + "&client_id=" + client_id + "&scope=pub&redirect_uri=" + redirect_uri + "&response_type=code";
+  </script>
+</body>
+
+</html>
